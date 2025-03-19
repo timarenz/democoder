@@ -5,7 +5,20 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./wizdir:/home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizdir
+    depends_on:
+      - socat
+    environment:
+      DOCKER_HOST: 'socat:2375'
     develop:
       watch:
         - action: rebuild
           path: Dockerfile
+  socat:
+    image: alpine/socat
+    command: 'tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock'
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
