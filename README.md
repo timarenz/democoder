@@ -14,15 +14,10 @@ A containerized development environment using Visual Studio Code (code-server) p
 2. Run the following command to start the environment:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 3. Access the development environment at http://localhost:8080
-
-## Usage
-
-The development environment will be available at http://localhost:8080 with a pre-configured VS Code instance.
-
 
 ## Disclaimer
 
