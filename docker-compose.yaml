@@ -6,7 +6,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - ./wizdir:/home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizdir
     depends_on:
       - socat
