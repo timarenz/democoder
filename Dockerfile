@@ -25,7 +25,7 @@ RUN \
     && code-server --install-extension /home/coder/WizCloud.wiz-vscode.vsix \
     && rm /home/coder/WizCloud.wiz-vscode.vsix \
     && mkdir -p /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode \
-    && curl -L -o /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 https://downloads.wiz.io/wizcli/0.73.0/wizcli-linux-arm64 \
+    && curl -L -o /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 https://downloads.wiz.io/wizcli/0.78.0/wizcli-linux-arm64 \
     && chmod +x /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 \
     && mkdir -p /home/coder/repo \
     && echo '{"workbench.colorTheme": "Visual Studio Dark", "editor.formatOnSave": true, "terraform.languageServer.enable": false, "wiz.environment": "demo", "wiz.showOnlyPolicyMatches": true, "wiz.Enable IAC Ignore Comments": true}' > /home/coder/.local/share/code-server/User/settings.json 
