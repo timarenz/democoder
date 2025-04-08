@@ -28,6 +28,6 @@ RUN \
     && curl -L -o /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 https://downloads.wiz.io/wizcli/0.79.0/wizcli-linux-arm64 \
     && chmod +x /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 \
     && mkdir -p /home/coder/repo \
-    && echo '{"workbench.colorTheme": "Visual Studio Dark", "editor.formatOnSave": true, "terraform.languageServer.enable": false, "wiz.environment": "demo", "wiz.showOnlyPolicyMatches": true, "wiz.Enable IAC Ignore Comments": true}' > /home/coder/.local/share/code-server/User/settings.json 
+    && echo '{"workbench.colorTheme": "Visual Studio Dark", "editor.formatOnSave": true, "terraform.languageServer.enable": false}' > /home/coder/.local/share/code-server/User/settings.json 
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--auth", "none", "--bind-addr", "0.0.0.0:8080", "/home/coder/repo"]
