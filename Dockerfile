@@ -1,4 +1,4 @@
-FROM codercom/code-server:latest
+FROM codercom/code-server:ubuntu
 
 # Only required if full Docker is required, which is not the case.
 # USER root
@@ -25,7 +25,7 @@ RUN \
     && code-server --install-extension /home/coder/WizCloud.wiz-vscode.vsix \
     && rm /home/coder/WizCloud.wiz-vscode.vsix \
     && mkdir -p /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode \
-    && curl -L -o /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 https://downloads.wiz.io/wizcli/0.79.0/wizcli-linux-arm64 \
+    && curl -L -o /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 https://downloads.wiz.io/wizcli/0.83.0/wizcli-linux-arm64 \
     && chmod +x /home/coder/.local/share/code-server/User/globalStorage/wizcloud.wiz-vscode/wizcli-linux-arm64 \
     && mkdir -p /home/coder/repo \
     && echo '{"workbench.colorTheme": "Visual Studio Dark", "editor.formatOnSave": true, "terraform.languageServer.enable": false}' > /home/coder/.local/share/code-server/User/settings.json 

@@ -39,6 +39,8 @@ services:
 [...]
 ```
 
+In addition the `wizdir` directory is mounted into the container to persist the credentials. If you want to delete the credentials, stop the container and delete the content of the `wizdir` or use the disconnect command of the Wiz Code extension.
+
 ## Disclaimer
 
 **This project is provided as-is without any guarantees.** The authors make no warranties regarding the functionality, reliability, or suitability for any purpose. Use at your own risk.
